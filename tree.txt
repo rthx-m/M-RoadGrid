@@ -1,0 +1,32 @@
+PWD-Road-Intelligence/
+├── app/
+│   ├── main.py
+│   ├── api/
+│   │   ├── projects.py
+│   │   ├── inspections.py
+│   │   └── analysis.py
+│   ├── ai/
+│   │   ├── yolo.py
+│   │   └── inspector.py
+│   ├── assessment/
+│   │   └── scoring.py
+│   ├── database.py
+│   └── models.py
+├── frontend/
+│   ├── index.html
+│   ├── project.html
+│   ├── inspection.html
+│   ├── css/style.css
+│   └── js/
+│       ├── app.js
+│       ├── project.js
+│       └── inspection.js
+├── models/
+│   └── YOLOv8_Small_RDD.pt
+├── data/
+│   ├── roadintel.db
+│   └── uploads/
+├── .env
+├── .gitignore
+├── requirements.txt
+└── README.md

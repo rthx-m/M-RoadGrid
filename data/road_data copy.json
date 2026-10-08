@@ -1,0 +1,182 @@
+{
+  "projects": [
+    {
+      "id": "PRJ-001",
+      "road_name": "RIMS Road Arterial Corridor",
+      "location": "Imphal West, Manipur",
+      "road_type": "Major District Road",
+      "length_km": 2.4,
+      "importance": "High",
+      "importance_details": "Major hospital, school and college access route.",
+      "connectivity": "Hospital route, school route, college route, daily commute",
+      "traffic_level": "High",
+      "created_at": "2026-10-05",
+      "summary": {
+        "priority_index": null,
+        "ranking": null,
+        "urgency": null
+      },
+      "inspections": [
+        {
+          "id": "INSP-001",
+          "date": "2026-10-05",
+          "inspector": "R. Sharma",
+          "maintenance": {
+            "last_maintenance_date": "2023-04-12",
+            "notes": "Major overlay"
+          },
+          "notes": "Routine road condition inspection.",
+          "images": [
+            {
+              "id": "IMG-001",
+              "filename": "road_001.jpg",
+              "original_path": "data/uploads/PRJ-001/INSP-001/original/road_001.jpg",
+              "yolo_path": "data/uploads/PRJ-001/INSP-001/yolo/road_001.jpg",
+              "yolo": {
+                "class_counts": {
+                  "Potholes": 3,
+                  "Longitudinal Crack": 1
+                },
+                "pothole_top_confidence": 0.92
+              },
+              "ai_inspection": {
+                "overall_condition": "poor",
+                "severity": "high",
+                "confidence": "high",
+                "observed_deterioration": [
+                  "Multiple potholes",
+                  "Surface cracking"
+                ],
+                "additional_visual_findings": [
+                  "General pavement deterioration"
+                ],
+                "safety_concerns": [
+                  "Potholes may affect vehicle stability"
+                ],
+                "recommended_action": "Prioritize repair and field inspection.",
+                "needs_additional_images": false,
+                "reasoning": "The visible pavement shows significant deterioration."
+              }
+            },
+            {
+              "id": "IMG-002",
+              "filename": "road_002.jpg",
+              "original_path": "data/uploads/PRJ-001/INSP-001/original/road_002.jpg",
+              "yolo_path": "data/uploads/PRJ-001/INSP-001/yolo/road_002.jpg",
+              "yolo": {
+                "class_counts": {
+                  "Potholes": 2
+                },
+                "pothole_top_confidence": 0.81
+              },
+              "ai_inspection": {
+                "overall_condition": "poor",
+                "severity": "high",
+                "confidence": "high",
+                "observed_deterioration": [
+                  "Multiple potholes"
+                ],
+                "additional_visual_findings": [
+                  "Worn pavement surface"
+                ],
+                "safety_concerns": [
+                  "Localized vehicle hazard"
+                ],
+                "recommended_action": "Include this section in repair planning.",
+                "needs_additional_images": false,
+                "reasoning": "Potholes are clearly visible and supported by the computer vision results."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "PRJ-002",
+      "road_name": "Singjamei Residential Ring 3",
+      "location": "Singjamei, Imphal",
+      "road_type": "Urban Feeder Road",
+      "length_km": 1.1,
+      "importance": "Medium",
+      "importance_details": "Important residential and local access road.",
+      "connectivity": "School route, local market, residential commute",
+      "traffic_level": "Medium",
+      "created_at": "2026-10-06",
+      "summary": {
+        "priority_index": null,
+        "ranking": null,
+        "urgency": null
+      },
+      "inspections": [
+        {
+          "id": "INSP-002",
+          "date": "2026-10-06",
+          "inspector": "T. Robi",
+          "maintenance": {
+            "last_maintenance_date": "2024-06-15",
+            "notes": "Routine maintenance"
+          },
+          "notes": "Routine road condition inspection.",
+          "images": [
+            {
+              "id": "IMG-003",
+              "filename": "ring3_001.jpg",
+              "original_path": "data/uploads/PRJ-002/INSP-002/original/ring3_001.jpg",
+              "yolo_path": "data/uploads/PRJ-002/INSP-002/yolo/ring3_001.jpg",
+              "yolo": {
+                "class_counts": {
+                  "Potholes": 3
+                },
+                "pothole_top_confidence": 0.89
+              },
+              "ai_inspection": {
+                "overall_condition": "fair",
+                "severity": "moderate",
+                "confidence": "high",
+                "observed_deterioration": [
+                  "Several potholes"
+                ],
+                "additional_visual_findings": [
+                  "Minor surface wear"
+                ],
+                "safety_concerns": [
+                  "Localized pothole hazards"
+                ],
+                "recommended_action": "Schedule targeted maintenance.",
+                "needs_additional_images": true,
+                "reasoning": "Moderate deterioration is visible, but additional road coverage would improve confidence."
+              }
+            },
+            {
+              "id": "IMG-004",
+              "filename": "ring3_002.jpg",
+              "original_path": "data/uploads/PRJ-002/INSP-002/original/ring3_002.jpg",
+              "yolo_path": "data/uploads/PRJ-002/INSP-002/yolo/ring3_002.jpg",
+              "yolo": {
+                "class_counts": {
+                  "Longitudinal Crack": 2
+                },
+                "pothole_top_confidence": 0.0
+              },
+              "ai_inspection": {
+                "overall_condition": "fair",
+                "severity": "moderate",
+                "confidence": "moderate",
+                "observed_deterioration": [
+                  "Longitudinal cracking"
+                ],
+                "additional_visual_findings": [
+                  "Surface wear"
+                ],
+                "safety_concerns": [],
+                "recommended_action": "Monitor cracking and include in routine maintenance.",
+                "needs_additional_images": true,
+                "reasoning": "Cracking is visible, but the available image provides limited coverage of the road."
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

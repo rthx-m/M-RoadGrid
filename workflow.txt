@@ -1,0 +1,60 @@
+                    PWD USER
+                       │
+                       ▼
+              CREATE ROAD PROJECT
+                       │
+                       ▼
+              ENTER ROAD METADATA
+                       │
+                       ▼
+             CREATE INSPECTION
+                       │
+                       ▼
+              UPLOAD ROAD IMAGES
+                       │
+                       ▼
+              IMAGE PREPROCESSING
+                       │
+                       ▼
+              YOLO / RDD2022 MODEL
+                       │
+          ┌────────────┴────────────┐
+          ▼                         ▼
+   Defect detections          Confidence scores
+          │                         │
+          └────────────┬────────────┘
+                       ▼
+             IMAGE-LEVEL ANALYSIS
+                       │
+                       ▼
+          INSPECTION-LEVEL AGGREGATION
+                       │
+                       ▼
+             ROAD CONDITION ENGINE
+                       │
+          ┌────────────┼────────────┐
+          ▼            ▼            ▼
+      Severity     Defect       Coverage/
+                     density      distribution
+          │            │            │
+          └────────────┼────────────┘
+                       ▼
+              PRIORITY SCORE ENGINE (backend logic)
+                       │
+                       ▼
+               PROJECT ASSESSMENT and AGENTIC REASONING(additional)‏
+                       │
+          ┌────────────┼────────────┐
+          ▼            ▼            ▼
+       Score       Condition     Priority
+          │            │            │
+          └────────────┼────────────┘
+                       ▼
+                 DASHBOARD
+                       │
+          ┌────────────┼─────────────┐
+          ▼            ▼             ▼
+        Report        Map          History
+                                     │
+                                     ▼
+                              Future inspection

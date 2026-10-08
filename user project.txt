@@ -1,0 +1,29 @@
+PROJECT - user create a project for a road once
+│
+├── Road information
+│   ├── Road name / ID
+│   ├── Address / location
+│   ├── GPS coordinates
+│   ├── Road type
+│   ├── Length
+│   ├── Traffic level
+│   ├── Importance
+│   └── Other available PWD data
+│
+├── Inspection 01 — Oct 2026
+│   ├── Image 01
+│   ├── Image 02
+│   ├── Image 03
+│   └── AI assessment
+│
+├── Maintenance
+│   ├── Date
+│   ├── Type
+│   ├── Cost
+│   └── Notes
+│
+├── Inspection 02 — Jan 2027
+│   ├── New images
+│   └── AI assessment
+│
+└── History
