@@ -1,3 +1,195 @@
 {
-  "projects": []
+  "projects": [
+    {
+      "id": "PRJ-AE3EAF",
+      "road_name": "rims road",
+      "location": "lamphel",
+      "road_type": "main road",
+      "length_km": 5.0,
+      "importance": "very important",
+      "importance_details": "road is narrow, dense, daily commute is high. there is a health care complex nearby",
+      "connectivity": "connects with state hospital",
+      "traffic_level": "very dense",
+      "created_at": "2026-10-09",
+      "ai_context": {},
+      "summary": {
+        "priority_index": 74,
+        "ranking": 1,
+        "urgency": "Very High"
+      },
+      "inspections": [
+        {
+          "id": "INSP-499660",
+          "date": "2026-10-09",
+          "inspector": "",
+          "maintenance": {
+            "last_maintenance_date": "2019-02-02",
+            "notes": "checking"
+          },
+          "notes": "found some cracks, heavy traffic, flooded road surface in heavy rain",
+          "images": [
+            {
+              "id": "IMG-D7F0C0",
+              "filename": "images (1).jpeg",
+              "original_path": "data\\uploads\\PRJ-AE3EAF\\INSP-499660\\original\\images (1).jpeg",
+              "yolo_path": "data\\uploads\\PRJ-AE3EAF\\INSP-499660\\yolo\\images (1).jpeg",
+              "yolo": {
+                "class_counts": {
+                  "Potholes": 5
+                },
+                "pothole_top_confidence": 0.586,
+                "pothole_top_3_avg_confidence": 0.42
+              },
+              "ai_inspection": {
+                "overall_condition": "poor",
+                "severity": "high",
+                "confidence": "high",
+                "observed_deterioration": [
+                  "Potholes",
+                  "Water-filled depressions",
+                  "Severe asphalt stripping",
+                  "Exposed sub-base and loose gravel",
+                  "Surface disintegration"
+                ],
+                "additional_visual_findings": [
+                  "Two-wheelers navigating severely degraded pavement",
+                  "Poor drainage causing water accumulation in road depressions",
+                  "Large unpaved/stripped surface areas"
+                ],
+                "safety_concerns": [
+                  "High risk of accidents for two-wheeler riders due to unlevel surface and potholes",
+                  "Potential vehicle structural damage from deep road depressions",
+                  "Reduced traction on wet, muddy, and gravelly surfaces"
+                ],
+                "recommended_action": "Schedule comprehensive road resurfacing, base repair, and drainage system improvements.",
+                "needs_additional_images": false,
+                "reasoning": "Visual evidence reveals severe road surface deterioration with widespread stripping of the asphalt layer, loose gravel, and multiple water-filled potholes. YOLO detections confirm multiple potholes across the road section. Given the dense traffic and presence of motorcycles, these road defects create immediate safety hazards."
+              }
+            }
+          ]
+        },
+        {
+          "id": "INSP-692DD3",
+          "date": "2026-10-09",
+          "inspector": "or",
+          "maintenance": {
+            "last_maintenance_date": "2022-03-02",
+            "notes": "sadij"
+          },
+          "notes": "gfr",
+          "images": [
+            {
+              "id": "IMG-675852",
+              "filename": "1500x900_426556-kochin-roads.jpg",
+              "original_path": "data\\uploads\\PRJ-AE3EAF\\INSP-692DD3\\original\\1500x900_426556-kochin-roads.jpg",
+              "yolo_path": "data\\uploads\\PRJ-AE3EAF\\INSP-692DD3\\yolo\\1500x900_426556-kochin-roads.jpg",
+              "yolo": {
+                "class_counts": {
+                  "Potholes": 6
+                },
+                "pothole_top_confidence": 0.742,
+                "pothole_top_3_avg_confidence": 0.581
+              },
+              "ai_inspection": {
+                "overall_condition": "critical",
+                "severity": "critical",
+                "confidence": "high",
+                "observed_deterioration": [
+                  "Multiple large water-filled potholes",
+                  "Severe asphalt stripping and aggregate loss",
+                  "Extensive ravelling and surface disintegration",
+                  "Structural pavement failure across the carriageway"
+                ],
+                "additional_visual_findings": [
+                  "Standing water within depressions obscuring pothole depth",
+                  "Loose gravel, aggregate, and muddy slurry scattered on pavement surface",
+                  "Active vehicular traffic navigating around defective areas"
+                ],
+                "safety_concerns": [
+                  "Severe risk of overturning or loss of control for two-wheelers and three-wheelers",
+                  "Vehicular structural damage due to hidden pothole depths",
+                  "Traffic congestion and erratic swerving to avoid deep depressions"
+                ],
+                "recommended_action": "Execute immediate emergency patching and base stabilization, followed by full-depth pavement reconstruction and implementation of adequate stormwater drainage.",
+                "needs_additional_images": false,
+                "reasoning": "The visual inspection reveals dense clusters of deep, waterlogged potholes spanning the primary travel lane, accompanied by complete wearing course breakdown. YOLO detections identify at least six distinct potholes, which visually merge into extensive structural degradation across the road width."
+              }
+            },
+            {
+              "id": "IMG-F6B72A",
+              "filename": "images (1).jpeg",
+              "original_path": "data\\uploads\\PRJ-AE3EAF\\INSP-692DD3\\original\\images (1).jpeg",
+              "yolo_path": "data\\uploads\\PRJ-AE3EAF\\INSP-692DD3\\yolo\\images (1).jpeg",
+              "yolo": {
+                "class_counts": {
+                  "Potholes": 5
+                },
+                "pothole_top_confidence": 0.586,
+                "pothole_top_3_avg_confidence": 0.42
+              },
+              "ai_inspection": {
+                "overall_condition": "critical",
+                "severity": "critical",
+                "confidence": "high",
+                "observed_deterioration": [
+                  "potholes",
+                  "water pooling",
+                  "surface erosion",
+                  "loss of pavement surface"
+                ],
+                "additional_visual_findings": [
+                  "exposed sub-base",
+                  "motorcyclists navigating around defects",
+                  "standing water in depressions"
+                ],
+                "safety_concerns": [
+                  "risk of two-wheeler loss of control",
+                  "potential vehicle damage from deep potholes",
+                  "reduced traction on unpaved surface"
+                ],
+                "recommended_action": "Immediate patching and scheduled complete pavement reconstruction with drainage repair.",
+                "needs_additional_images": false,
+                "reasoning": "Visual evidence reveals severe road surface breakdown with multiple water-filled potholes, heavy erosion, and exposed sub-base across a major portion of the roadway, consistent with YOLO detections."
+              }
+            },
+            {
+              "id": "IMG-839560",
+              "filename": "images.jpeg",
+              "original_path": "data\\uploads\\PRJ-AE3EAF\\INSP-692DD3\\original\\images.jpeg",
+              "yolo_path": "data\\uploads\\PRJ-AE3EAF\\INSP-692DD3\\yolo\\images.jpeg",
+              "yolo": {
+                "class_counts": {},
+                "pothole_top_confidence": 0.0,
+                "pothole_top_3_avg_confidence": 0.0
+              },
+              "ai_inspection": {
+                "overall_condition": "poor",
+                "severity": "high",
+                "confidence": "high",
+                "observed_deterioration": [
+                  "severe surface erosion",
+                  "extensive aggregate loss",
+                  "deep depression",
+                  "potholes"
+                ],
+                "additional_visual_findings": [
+                  "exposed sub-base stones",
+                  "loose gravel on surface",
+                  "parked vehicles on narrow roadside"
+                ],
+                "safety_concerns": [
+                  "risk of vehicle undercarriage damage",
+                  "hazard to two-wheelers and pedestrians",
+                  "potential loss of vehicle control"
+                ],
+                "recommended_action": "Perform full-depth patch repair, base stabilization, and asphalt resurfacing across the damaged area.",
+                "needs_additional_images": false,
+                "reasoning": "Visual evidence shows significant surface degradation, including large areas where the top asphalt layer has completely eroded away to reveal the aggregate sub-base. Although YOLO reported zero detections, the visual damage is extensive and poses notable safety risks to traffic."
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
 }

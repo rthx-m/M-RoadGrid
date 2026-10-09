@@ -7,6 +7,7 @@ from pathlib import Path
 from fastapi import APIRouter, UploadFile, File, Form, HTTPException
 
 from app.api.analysis import analyze_image
+from app.assessment.scoring import calculate_priority
 
 router = APIRouter()
 
@@ -22,6 +23,7 @@ def load_data():
 def save_data(data):
     with open(DATA_FILE, "w", encoding="utf-8") as f:
         json.dump(data, f, indent=2)
+
 
 
 @router.post("/{project_id}")
@@ -42,14 +44,14 @@ async def create_inspection(
     )
 
     if not project:
-        raise HTTPException(status_code=404, detail="Project not found")
+        raise HTTPException(
+            status_code=404,
+            detail="Project not found"
+        )
 
     inspection_id = f"INSP-{uuid.uuid4().hex[:6].upper()}"
 
-    inspection_dir = (
-        UPLOAD_DIR / project_id / inspection_id
-    )
-
+    inspection_dir = UPLOAD_DIR / project_id / inspection_id
     original_dir = inspection_dir / "original"
     yolo_dir = inspection_dir / "yolo"
 
@@ -68,11 +70,9 @@ async def create_inspection(
         "images": []
     }
 
-    # Save images and create image records
+    # 1. Save all uploaded images first
     for upload in images:
-
         image_id = f"IMG-{uuid.uuid4().hex[:6].upper()}"
-
         filename = Path(upload.filename).name
         original_path = original_dir / filename
 
@@ -90,16 +90,47 @@ async def create_inspection(
 
         inspection["images"].append(image)
 
-        # Run YOLO → Gemini → scoring
-        analyze_image(
-            project,
-            inspection,
-            image
+    if not inspection["images"]:
+        raise HTTPException(
+            status_code=400,
+            detail="At least one image is required"
         )
 
-    # Add inspection to project
+    # 2. Add inspection before running analysis
     project["inspections"].append(inspection)
 
+    # 3. Run YOLO and Gemini for each image
+    for image in inspection["images"]:
+        analyze_image(project, inspection, image)
+
+    # 4. Calculate priority once, using the completed inspection
+    result = calculate_priority(project)
+
+    project["summary"]["priority_index"] = result["priority_index"]
+    project["summary"]["urgency"] = result["urgency"]
+
+    # 5. Recalculate rankings for every project
+    ranked_projects = sorted(
+        data["projects"],
+        key=lambda p: (
+            p.get("summary", {}).get("priority_index") is not None,
+            p.get("summary", {}).get("priority_index") or 0
+        ),
+        reverse=True
+    )
+
+    for project_rank, ranked_project in enumerate(
+        ranked_projects, start=1
+    ):
+        priority = ranked_project.get(
+            "summary", {}
+        ).get("priority_index")
+
+        ranked_project["summary"]["ranking"] = (
+            project_rank if priority is not None else None
+        )
+
+    # 6. Persist scores and rankings
     save_data(data)
 
     return {

@@ -9,7 +9,7 @@ from pathlib import Path
 from fastapi import APIRouter, HTTPException
 from pydantic import BaseModel
 
-from app.ai.inspector import classify_road_context
+#from app.ai.inspector import classify_road_context
 from app.assessment.scoring import calculate_priority
 
 router = APIRouter()
@@ -57,7 +57,7 @@ def create_project(project_data: ProjectCreate):
         "inspections": []
     }
 
-    project["ai_context"] = classify_road_context(project)
+    #project["ai_context"] = classify_road_context(project)
 
     data["projects"].append(project)
     save_data(data)
@@ -81,7 +81,7 @@ def update_project(project_id: str, project_data: ProjectCreate):
     project.update(project_data.model_dump())
 
     # Re-normalize connectivity/importance after metadata changes
-    project["ai_context"] = classify_road_context(project)
+    #project["ai_context"] = classify_road_context(project)
 
     save_data(data)
 

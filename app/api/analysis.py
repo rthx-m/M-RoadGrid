@@ -4,7 +4,7 @@ from pathlib import Path
 
 from app.ai.yolo import detect_road_damage
 from app.ai.inspector import inspect_road_image
-from app.assessment.scoring import calculate_priority
+#from app.assessment.scoring import calculate_priority
 
 
 def analyze_image(
@@ -46,9 +46,11 @@ def analyze_image(
     )
 
     # 3. Calculate latest inspection priority
+    ''''
     result = calculate_priority(project)
 
     project["summary"]["priority_index"] = result["priority_index"]
     project["summary"]["urgency"] = result["urgency"]
+    '''
 
     return image

@@ -28,10 +28,20 @@ RETRY_DELAY = 2
 # STRUCTURED OUTPUT
 # ---------------------------------------------------------
 
+
+class Connectivity(BaseModel):
+    hospital: bool
+    school: bool
+    college: bool
+    commercial: bool
+    daily_commute: bool
+    multiple_important_connections: bool
+
+
 class RoadContext(BaseModel):
     importance_level: Literal["low", "medium", "high"]
+    connectivity: Connectivity
 
-    connectivity: dict[str, bool]
 
 
 class RoadAssessment(BaseModel):
@@ -53,14 +63,14 @@ class RoadAssessment(BaseModel):
 # GEMINI CALL WITH RETRY + FALLBACK
 # ---------------------------------------------------------
 
-def _generate(prompt, contents, response_schema):
 
+
+def _generate(prompt, contents, response_schema):
     last_error = None
+    json_schema = response_schema.model_json_schema()
 
     for model in MODELS:
-
         for attempt in range(RETRIES_PER_MODEL):
-
             try:
                 response = client.models.generate_content(
                     model=model,
@@ -68,11 +78,14 @@ def _generate(prompt, contents, response_schema):
                     config=types.GenerateContentConfig(
                         temperature=0.2,
                         response_mime_type="application/json",
-                        response_schema=response_schema,
+                        response_json_schema=json_schema,
                     ),
                 )
 
-                return response.parsed
+                if not response.text:
+                    raise ValueError("Gemini returned an empty response")
+
+                return response_schema.model_validate_json(response.text)
 
             except Exception as e:
                 last_error = e
@@ -80,11 +93,9 @@ def _generate(prompt, contents, response_schema):
                 if attempt < RETRIES_PER_MODEL - 1:
                     time.sleep(RETRY_DELAY)
 
-        print(f"Gemini model failed: {model}")
+        print(f"Gemini model failed: {model}: {last_error}")
 
-    raise RuntimeError(
-        f"All Gemini models failed: {last_error}"
-    )
+    raise RuntimeError(f"All Gemini models failed: {last_error}")
 
 
 # ---------------------------------------------------------
